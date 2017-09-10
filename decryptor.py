@@ -1,0 +1,51 @@
+import zlib
+import base64
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_OAEP
+
+private_key= "MIIEowIBAAKCAQEAmnz3FpZ0AnXk+nLiPJRYdleh1WJ3AyR3cx/aBOlUegCVIfon
+JlNobPcHbVzLEYmwY+w0jAw7+cF2btmVGyOopleGgauM8YkOIp213uiAk6FXf3zT
+LGVopXehrnO+TPczJ/NKZLuGd2lrhwjVv38XhctCC2Ib8/GG03tO0paCzdQosVwM
+N1uPUnyPbL8q1jgoTk6ubloe6rxOHzdcTH3IbT9cd3mb+xUI7z9X6yAJxa3KP07Q
+vxzF8NFvB20vJO54tiWqwlKztxej3qNcmeyi4ilSfJS98qKtV1ZVESOZ+x5zC32I
+tpDuctVpEVz13vIcsh8Lv4ABC/tXIxwa8+BeeQIDAQABAoIBAG2PnnRocxGjpqZv
+fz7TPgF/mIgKcrjJzeTZe/bruzti2mDkVYt6r55Hev72RhXD/lJ/G60OqCIyL9nh
+eTtsCJkfjYa8sRJCzsGB84+IeFc6nyEM136u1I40z3c3IojW73KvudzCmVRqcRWt
+EFnkujvqsIX+KDDS43lsA7SZhV6Os3ENatL9E7Q0UlxlxW7UAIdHuczszbHVK68F
+ChZei0EGJQQZWwy3aKoT+XPLlO0P9fC+Y5CThkAb2S+RSVWHS2xILV2RaAyyTzt8
+3w7+D7F3lTONY+Y3DYMIB7aO5sL4PKlif2xrKoxU+TzvaVONzEfGykeNbmGtZviU
+0xbMh1kCgYEAvNP+hvmK4sIHVBrge9FBHavx+eRMjFVObxJ7xbQHbIYxLkcPgG1N
+mRiHHJUXg1LslSMJW4pgWib+6vZ1dzXw3UXIy2hcEEV8l3uHm5TmKgB2XUHaLKeN
+jSLw1QyLyxFfKxkeQXMYcV68RWCJqjAN3QCxvy/wI53sfF9WHfRmQz8CgYEA0XG8
+D2bF5Yr1+ODpU3ZgohMb77l2YARVSUwz6NgQppI2uA11cp+k+KjsOs7+cQ082ywW
+o2bR0g002Sgkg/Sr4rFINV2Pt+kulelcAdD3+4AieAbXH7tc7eqUvlIs0F4uMRoL
+mL5ci/mQOW/OOhMIEtlz/EZJDgEUChyHt4LmSEcCgYEAlvRC/lRwG2dRxILYAyP+
+EmJrR4KjT2zDDziPijWp2bBNkNluIxU+e62IFel6qpmYWIFx8aRl8qxKDjyJG4wb
+ykkHhNUhBEEIoXE3r8ERX3KPLW5/pEMufi34qdklyGlS03l5HomMeNVrXWsXot5X
+tt3fOyBvsYmGjMcKaVgAiLECgYBa2PWUzKRsY7E7yfsLO97Ajn9gpVamYVrJF2ew
+yP+38NYRUa0vEfZR8Zu+CoktamuKOf571B6Q+S+CPjpQjnF8PB+xHis3v8p4Nie1
+lfnqunK5E2Z+mhu+CzGHuEc9/owUulJrZ67m/FJFx6xxXk3zNyVrOOV5UJhrpmJs
+BDh1AwKBgFsfK/tgJX8WsRTfgsw/WhGNkejLfe34EqtIVWP/gF7LJwZDJSt0qxy+
+/1e915LH12ZD9/lJqlqxIsOqdlFgOvkkTqnvcXnFiccSEGyOdyTwsQPOw88+rT2P
+o9ZB8noLMsJuaulNvYlSX3FNMPkoJAwiar+4kk2nUbmQBTSGMUjI
+"
+
+
+rsakey = RSA.iportKey(private_key)
+rsakey = PKCS1_OAEP.new(rsakey)
+
+
+chunk_size= 256
+offset 	  = 0
+decrypted = ""
+encrypted = base64.b64decode(encrypted)
+
+while offset < len(encrypted)
+    decrypted += rsakey.decrypt(encrypted[offset:offset+chunk_size])
+
+
+# now we decompress to original
+plaintext = zlib.decompress(decrypted)
+
+
+print paintext
